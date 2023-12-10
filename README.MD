@@ -6,22 +6,22 @@ python -m venv envsia
 # Paso 3: Activar el entorno virtual
 envsia\Scripts\activate
 
-# Instalar las librerias del archivo requirements.txt
+# Paso 4: Instalar las librerias del archivo requirements.txt
 pip install -r requirements.txt
 
-# Crear nuevo proyecto
+# Paso 5: Crear nuevo proyecto
 django-admin startproject myproject
 
-# abrir el proyecto
+# Paso 6: abrir el proyecto
 cd myproject
 
-# Hacer migraciones
+# Paso 7: Hacer migraciones
 python manage.py makemigrations
-# Iniciar las migraciones
+# Paso 8: Iniciar las migraciones
 python manage.py migrate
 
-
-
-# Ejecutar la aplicación manage.py
+# Paso 9: Ejecutar la aplicación manage.py
 python manage.py runserver
 
+# Pas 10: crear las class de tu base de datos
+python manage.py inspectdb > models.py
