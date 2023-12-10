@@ -10,10 +10,12 @@ envsia\Scripts\activate
 pip install -r requirements.txt
 
 # Paso 5: Crear nuevo proyecto
-django-admin startproject myproject
-
+django-admin startproject project_vecinos .
+django-admin startapp vecinos_app  
 # Paso 6: abrir el proyecto
 cd myproject
+# crear superususario
+python manage.py createsuperuser
 
 # Paso 7: Hacer migraciones
 python manage.py makemigrations
