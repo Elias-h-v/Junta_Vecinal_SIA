@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Socios</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Socios</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for c in Socios %}
+            <tr>
+                <td>{{c.nombre}}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+</html>

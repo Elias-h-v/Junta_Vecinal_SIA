@@ -188,7 +188,6 @@ class Socios(models.Model):
     id_grupo_familiar = models.ForeignKey(GruposFamiliares, models.DO_NOTHING, db_column='id_grupo_familiar', blank=True, null=True)
     id_parentesco = models.ForeignKey(Parentescos, models.DO_NOTHING, db_column='id_parentesco', blank=True, null=True)
     id_certificado = models.IntegerField(blank=True, null=True)
-    ide_comision = models.IntegerField(blank=True, null=True)
     id_perfil = models.ForeignKey(Perfiles, models.DO_NOTHING, db_column='id_perfil', blank=True, null=True)
 
     class Meta:
