@@ -160,7 +160,8 @@ class GruposFamiliares(models.Model):
 class Parentescos(models.Model):
     id_parentesco = models.IntegerField(primary_key=True)
     nombre_parentesco = models.CharField(max_length=255, blank=True, null=True)
-
+    def __str__(self):
+        return self.nombre_parentesco
     class Meta:
         managed = False
         db_table = 'parentescos'
@@ -169,7 +170,8 @@ class Parentescos(models.Model):
 class Perfiles(models.Model):
     id_perfil = models.IntegerField(primary_key=True)
     nombre_perfil = models.CharField(max_length=13, blank=True, null=True)
-
+    def __str__(self):
+        return self.nombre_perfil
     class Meta:
         managed = False
         db_table = 'perfiles'
@@ -189,7 +191,8 @@ class Socios(models.Model):
     id_parentesco = models.ForeignKey(Parentescos, models.DO_NOTHING, db_column='id_parentesco', blank=True, null=True)
     id_certificado = models.IntegerField(blank=True, null=True)
     id_perfil = models.ForeignKey(Perfiles, models.DO_NOTHING, db_column='id_perfil', blank=True, null=True)
-
+    def __str__(self):
+        return self.nombre
     class Meta:
         managed = False
         db_table = 'socios'
@@ -198,7 +201,8 @@ class Socios(models.Model):
 class TipoCertificados(models.Model):
     id_tipo_certificado = models.IntegerField(primary_key=True)
     nombre_tipo_certificado = models.CharField(max_length=255, blank=True, null=True)
-
+    def __str__(self):
+        return self.nombre_tipo_certificado
     class Meta:
         managed = False
         db_table = 'tipo_certificados'
@@ -207,7 +211,8 @@ class TipoCertificados(models.Model):
 class TipoComisiones(models.Model):
     id_tipo_comision = models.IntegerField(primary_key=True)
     nombre_comision = models.CharField(max_length=255, blank=True, null=True)
-
+    def __str__(self):
+        return self.nombre_comision
     class Meta:
         managed = False
         db_table = 'tipo_comisiones'
