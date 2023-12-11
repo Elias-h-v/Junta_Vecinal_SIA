@@ -192,7 +192,8 @@ class Socios(models.Model):
     id_certificado = models.IntegerField(blank=True, null=True)
     id_perfil = models.ForeignKey(Perfiles, models.DO_NOTHING, db_column='id_perfil', blank=True, null=True)
     def __str__(self):
-        return self.nombre
+        texto ="{0} {1} {2}"
+        return texto.format(self.rut, self.nombre, self.apellido)
     class Meta:
         managed = False
         db_table = 'socios'
