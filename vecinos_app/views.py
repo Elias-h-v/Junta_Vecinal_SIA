@@ -18,9 +18,11 @@ def buscar_socio(request):
 
             # Devolver solo los datos necesarios
             certificado_data = {
+                "rut": socio.rut,
                 "nombre": socio.nombre,
                 "apellido": socio.apellido,
                 "direccion": socio.direccion,
+                "fecha": socio.fecha_nacimiento,
             }
 
         except Socios.DoesNotExist:
