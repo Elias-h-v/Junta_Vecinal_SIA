@@ -1,0 +1,34 @@
+<!-- En buscar_socio.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar Certificado</title>
+</head>
+<body>
+
+  <h1>Buscar Certificado de Residencia</h1>
+
+  <form action="{% url 'buscar_socio' %}" method="post">
+    {% csrf_token %}
+    <label for="rut_busqueda">Rut:</label>
+    <input type="text" name="rut_busqueda" id="rut_busqueda" required>
+    <button type="submit">Buscar Certificado</button>
+  </form>
+
+  {% if certificado_data.nombre %}
+    <div id="certificado">
+      <h2>Certificado de Residencia</h2>
+      <p>Por la presente se certifica que {{ certificado_data.nombre }} {{ certificado_data.apellido }} reside en la siguiente dirección:</p>
+      <p><strong>Dirección:</strong> {{ certificado_data.direccion }}</p>
+      <p>Este certificado es válido a partir de la fecha de emisión.</p>
+    </div>
+  {% endif %}
+
+  {% if mensaje_error %}
+    <p id="error-message">{{ mensaje_error }}</p>
+  {% endif %}
+
+</body>
+</html>

@@ -178,11 +178,11 @@ class Perfiles(models.Model):
 
 
 class Socios(models.Model):
-    rut = models.CharField(primary_key=True, max_length=12)
-    nombre = models.CharField(max_length=255, blank=True, null=True)
-    apellido = models.CharField(max_length=255, blank=True, null=True)
-    direccion = models.CharField(max_length=255, blank=True, null=True)
-    fecha_nacimiento = models.DateField(blank=True, null=True)
+    rut = models.CharField(primary_key=True, max_length=12, verbose_name='Rut')
+    nombre = models.CharField(max_length=255, blank=True, null=True, verbose_name='Nombres')
+    apellido = models.CharField(max_length=255, blank=True, null=True, verbose_name='Apellidos')
+    direccion = models.CharField(max_length=255, blank=True, null=True, verbose_name='Dirección')
+    fecha_nacimiento = models.DateField(blank=True, null=True, verbose_name='Fecha nacimiento')
     telefono = models.IntegerField(blank=True, null=True)
     correo = models.CharField(max_length=255, blank=True, null=True)
     estado_civil = models.CharField(max_length=7, blank=True, null=True)

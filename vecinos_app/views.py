@@ -1,17 +1,29 @@
 from django.shortcuts import render
 from .models import Socios
-# Create your views here.
 from django.http import HttpResponse
 
-#def homeView(request):
- #   return HttpResponse("HOLAAAAA")
-
-#def inicio(request):
-#    return HttpResponse("¡Bienvenido a la página de inicio!")
-
-#def perfil(request):
- #   return HttpResponse("Esta es tu página de perfil.")
-
 def info_socios(request):
-   socios_lista = Socios.objects.all().order_by('rut')
-   return render(request,"info_socio.html",{"Socios":socios_lista})
+    socios_lista = Socios.objects.all().order_by('rut')
+    return render(request, "info_socio.html", {"Socios": socios_lista})
+
+def buscar_socio(request):
+    certificado_data = {}
+    mensaje_error = ""
+
+    if request.method == 'POST':
+        rut_busqueda = request.POST.get('rut_busqueda')
+
+        try:
+            socio = Socios.objects.get(rut=rut_busqueda)
+
+            # Devolver solo los datos necesarios
+            certificado_data = {
+                "nombre": socio.nombre,
+                "apellido": socio.apellido,
+                "direccion": socio.direccion,
+            }
+
+        except Socios.DoesNotExist:
+            mensaje_error = "No se encontró al socio con el rut proporcionado."
+
+    return render(request, "buscar_socio.html", {"certificado_data": certificado_data, "mensaje_error": mensaje_error})

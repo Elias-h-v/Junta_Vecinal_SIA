@@ -68,7 +68,6 @@ DROP COLUMN ide_comision;
 INSERT INTO socios (rut, nombre, apellido, direccion, fecha_nacimiento, telefono, correo, estado_civil, jefe_hogar, id_parentesco, id_perfil)
 VALUES 
 ('55556666-7', 'Marina', 'Perez', 'Avenida M #202', '1979-03-30', 777666555, 'marina.perez@example.com', 'casado', TRUE, 1, 2),
-('66667777-8', 'Alejandro', 'Torres', 'Calle N #303', '1997-11-18', 888777666, 'alejandro.torres@example.com', 'soltero', FALSE, 2, 2),
 ('77778888-9', 'Laura', 'Gutierrez', 'Avenida O #404', '1986-05-22', 999888777, 'laura.gutierrez@example.com', 'casado', TRUE, 3, 2),
 ('88889999-0', 'Diego', 'Rodriguez', 'Calle P #505', '1981-12-10', 111000999, 'diego.rodriguez@example.com', 'soltero', FALSE, 4, 1),
 ('99990000-1', 'Carmen', 'Lopez', 'Avenida Q #606', '1990-08-15', 222111000, 'carmen.lopez@example.com', 'casado', TRUE, 5, 2),
